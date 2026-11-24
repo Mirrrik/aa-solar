@@ -1,0 +1,18 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+ <uses-permission android:name="moe.shizuku.manager.permission.API_V23"/>
+ <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+ <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+ <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+ <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"/>
+ <uses-permission android:name="android.permission.WAKE_LOCK"/>
+ <queries><package android:name="com.google.android.projection.gearhead"/><package android:name="moe.shizuku.privileged.api"/></queries>
+ <application android:label="AA Solar" android:theme="@android:style/Theme.Material.NoActionBar" android:allowBackup="false" android:icon="@drawable/icon" android:supportsRtl="true">
+  <meta-data android:name="moe.shizuku.client.V3_SUPPORT" android:value="true"/>
+  <provider android:name="rikka.shizuku.ShizukuProvider" android:authorities="sk.octavia.aasolar.shizuku" android:exported="true" android:multiprocess="false" android:permission="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+  <activity android:name=".MainActivity" android:exported="true"><intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter></activity>
+  <receiver android:name=".AlarmReceiver" android:exported="false"><intent-filter><action android:name="android.intent.action.BOOT_COMPLETED"/><action android:name="android.intent.action.TIME_SET"/><action android:name="android.intent.action.TIMEZONE_CHANGED"/><action android:name="android.intent.action.MY_PACKAGE_REPLACED"/><action android:name="android.app.action.SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED"/></intent-filter></receiver>
+  <service android:name=".SwitchService" android:exported="false" android:foregroundServiceType="specialUse"><property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="Brief scheduled Android Auto map day/night switch using user-authorized Shizuku; no system theme changes"/></service>
+ </application>
+</manifest>
