@@ -46,7 +46,8 @@ More detail: [Setup and troubleshooting](docs/SETUP.md).
 
 The 0.1.0 prototype was physically tested on a Samsung SM-S942B reporting Android 17, Android Auto 18.0.664264-release, and Shizuku 13.6.0. Scheduled Day/Night changes were verified in Android Auto settings, including a locked-phone test, while the phone's dark theme stayed enabled. Version 0.1.1 adds the English interface and standalone public build packaging; it has build, lint, and solar calculation checks, but has not been separately road-tested.
 
-- An active NAVITEL/car-display session and a complete overnight sunrise transition have **not** been independently verified as part of the public release.
+- **NAVITEL DS1020 DVR:** the device owner reported successful day/night switching during a live connection on 2026-11-24. This is a user-reported result, not a compatibility guarantee for other head units.
+- A complete overnight sunrise transition has not yet been verified as part of the public release.
 - AA Solar does not continuously update location, detect tunnels, or use the ambient light sensor.
 - Polar day/night locations are not supported. Sunrise/sunset times are approximate and do not account for terrain or the local horizon.
 - Only one UiAutomation session can operate at a time; other testing/automation software may conflict.
@@ -96,3 +97,4 @@ Bug reports and small fixes are welcome. Include your phone model, Android versi
 AA Solar source is available under the [MIT License](LICENSE). See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for Shizuku and Gradle notices. The isolated-display approach was informed by [scrcpy's virtual-display implementation](https://github.com/Genymobile/scrcpy/blob/master/server/src/main/java/com/genymobile/scrcpy/video/NewDisplayCapture.java).
 
 This project is independent and is not affiliated with or endorsed by Google, Samsung, NAVITEL, or the Shizuku project. Android Auto and other product names belong to their respective owners.
+
