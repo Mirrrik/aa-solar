@@ -23,7 +23,7 @@ public class SwitchService extends Service{
  }
  void execute(int requested){
   PowerManager.WakeLock wake=((PowerManager)getSystemService(POWER_SERVICE)).newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,"aasolar:switch");wake.acquire(55000);
-  Shizuku.UserServiceArgs args=new Shizuku.UserServiceArgs(new ComponentName(getPackageName(),ShellService.class.getName())).daemon(false).processNameSuffix("solar").version(2);
+  Shizuku.UserServiceArgs args=new Shizuku.UserServiceArgs(new ComponentName(getPackageName(),ShellService.class.getName())).daemon(false).processNameSuffix("solar").version(3);
   CountDownLatch ready=new CountDownLatch(1);IBinder[] remote={null};boolean[] bound={false};
   ServiceConnection connection=new ServiceConnection(){public void onServiceConnected(ComponentName n,IBinder b){remote[0]=b;ready.countDown();}public void onServiceDisconnected(ComponentName n){remote[0]=null;}};
   boolean ok=false;
