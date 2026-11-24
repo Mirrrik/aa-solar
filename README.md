@@ -66,7 +66,7 @@ Requirements: JDK 17, Android SDK Platform 36, and an Android SDK configured thr
 
 ```sh
 # Linux/macOS
-./gradlew :app:assembleDebug :app:lintDebug
+bash ./gradlew :app:assembleDebug :app:lintDebug
 ```
 
 ```powershell

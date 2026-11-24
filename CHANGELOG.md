@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.2 — Portable build and CI fix
+
+- Use the Android SDK already provided by the GitHub-hosted Ubuntu runner, avoiding the retired `tools` package requested by the old SDK setup action.
+- Update GitHub-maintained build actions and avoid duplicate CI runs for release tags and documentation-only changes.
+- Normalize the Gradle shell wrapper to LF and document invocation through `bash` for source archives without executable file metadata.
+- Keep map-switching behaviour unchanged.
+
 ## 0.1.1 — Experimental public preview
 
 - English app interface, status messages and error descriptions.
